@@ -1,0 +1,13 @@
+{
+	"name": "zamasaur/php-template",
+	"description": "Template is an interface that represents a template to include.",
+	"type": "library",
+	"require": {
+		"php": ">=7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Zamasaur\\PhpTemplate\\": "src/"
+		}
+	}
+}
