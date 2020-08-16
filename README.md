@@ -104,7 +104,7 @@ $template = new TemplateImpl($filename);
 $searchArray = array("<!-- TITLE -->", "<!-- BODY -->");
 $replaceArray = array("MyTitle","MyBody");
 
-$template->include($searchArray, $replaceArray);
+$template->_include($searchArray, $replaceArray);
 ```
 
 ### includeOnce
@@ -122,5 +122,13 @@ $template = new TemplateImpl($filename);
 $searchArray = array("<!-- TITLE -->", "<!-- BODY -->");
 $replaceArray = array("MyTitle","MyBody");
 
-$template->includeOnce($searchArray, $replaceArray);
+$template->_includeOnce($searchArray, $replaceArray);
+```
+
+## PHPDoc
+
+This package comply with the PHPDoc standard, to generate them you must use the following command in a terminal opened in the root folder.
+
+```
+$ ./vendor/bin/phpdoc -d ./src -t ./docs/api
 ```
