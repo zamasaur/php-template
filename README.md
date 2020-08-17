@@ -125,12 +125,12 @@ $replaceArray = array("MyTitle","MyBody");
 $template->incorporateOnce($searchArray, $replaceArray);
 ```
 
-## PHPDoc
+## UnitTest
 
-This package comply with the PHPDoc standard, to generate them you must use the following command in a terminal opened in the root folder.
+This package comes with a series of UnitTest, to run them you must use the following command in a terminal opened in the root folder.
 
 ```
-$ ./vendor/bin/phpdoc -d ./src -t ./docs/api
+$ ./vendor/bin/phpunit tests
 ```
 
 ## PHPDoc
