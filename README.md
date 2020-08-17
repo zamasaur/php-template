@@ -89,14 +89,14 @@ Let say that your template look like the one described below.
 </html>
 ```
 
-### include
+### incorporate
 
 Includes the file by replacing the strings defined in `$searchArray` with those defined in `$replaceArray`.
 
 ```php
 /* index.php */
 require_once __DIR__ . "/../vendor/autoload.php";
-use Zamasaur\PhpUtils\TemplateImpl;
+use Zamasaur\PhpTemplate\TemplateImpl;
 
 $filename = __DIR__ . "/../resources/templates/template.php";
 $template = new TemplateImpl($filename);
@@ -104,17 +104,17 @@ $template = new TemplateImpl($filename);
 $searchArray = array("<!-- TITLE -->", "<!-- BODY -->");
 $replaceArray = array("MyTitle","MyBody");
 
-$template->_include($searchArray, $replaceArray);
+$template->incorporate($searchArray, $replaceArray);
 ```
 
-### includeOnce
+### incorporateOnce
 
 Includes only once the file by replacing the strings defined in `$searchArray` with those defined in `$replaceArray`.
 
 ```php
 /* index.php */
 require_once __DIR__ . "/../vendor/autoload.php";
-use Zamasaur\PhpUtils\TemplateImpl;
+use Zamasaur\PhpTemplate\TemplateImpl;
 
 $filename = __DIR__ . "/../resources/templates/template.php";
 $template = new TemplateImpl($filename);
@@ -122,7 +122,15 @@ $template = new TemplateImpl($filename);
 $searchArray = array("<!-- TITLE -->", "<!-- BODY -->");
 $replaceArray = array("MyTitle","MyBody");
 
-$template->_includeOnce($searchArray, $replaceArray);
+$template->incorporateOnce($searchArray, $replaceArray);
+```
+
+## PHPDoc
+
+This package comply with the PHPDoc standard, to generate them you must use the following command in a terminal opened in the root folder.
+
+```
+$ ./vendor/bin/phpdoc -d ./src -t ./docs/api
 ```
 
 ## PHPDoc

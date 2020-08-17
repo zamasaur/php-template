@@ -16,31 +16,41 @@ class TemplateImpl implements Template
 	* Constructor.
 	*
 	* @param string $filename
+	*
+	* @throws \InvalidArgumentException
+	*
 	*/
 	public function __construct(string $filename)
 	{
 		$this->filename = $filename;
+		if (!file_exists($this->filename)) {
+			throw new \InvalidArgumentException('Failed opening the file.');
+		}	
 	}
 	
-	public function _include(array $searchArray, array $replaceArray)
+	public function incorporate(array $searchArray, array $replaceArray)
 	{
+		ob_start();
 		ob_start(
 			function (string $buffer) use ($searchArray, $replaceArray) {
-				return (str_replace($searchArray, $replaceArray, $buffer));
+				return str_replace($searchArray, $replaceArray, $buffer);
 			}
 		);
 		include $this->filename;
 		ob_end_flush();
+		return ob_get_flush();
 	}
 	
-	public function _includeOnce(array $searchArray, array $replaceArray)
+	public function incorporateOnce(array $searchArray, array $replaceArray)
 	{
+		ob_start();
 		ob_start(
 			function (string $buffer) use ($searchArray, $replaceArray) {
-				return (str_replace($searchArray, $replaceArray, $buffer));
+				return str_replace($searchArray, $replaceArray, $buffer);
 			}
 		);
 		include_once $this->filename;
 		ob_end_flush();
+		return ob_get_flush();
 	}
 }

@@ -13,9 +13,9 @@ interface Template
 	* @param array $searchArray
 	* @param array $replaceArray
 	* 
-	* @return void
+	* @return string
 	*/
-	public function _include(array $searchArray, array $replaceArray);
+	public function incorporate(array $searchArray, array $replaceArray);
 	
 	
 	/**
@@ -24,7 +24,7 @@ interface Template
 	* @param array $searchArray
 	* @param array $replaceArray
 	* 
-	* @return void
+	* @return string
 	*/
-	public function _includeOnce(array $searchArray, array $replaceArray);
+	public function incorporateOnce(array $searchArray, array $replaceArray);
 }
