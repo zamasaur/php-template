@@ -5,7 +5,7 @@ namespace Zamasaur\PhpTemplate;
 use Zamasaur\PhpTemplate\Template;
 
 /**
-* An implementation of {@link Template}.
+* An implementation of Template.
 */
 class TemplateImpl implements Template
 {
@@ -28,7 +28,7 @@ class TemplateImpl implements Template
 		}	
 	}
 	
-	public function incorporate(array $searchArray, array $replaceArray)
+	public function incorporate(array $searchArray, array $replaceArray): string
 	{
 		ob_start();
 		ob_start(
@@ -41,7 +41,7 @@ class TemplateImpl implements Template
 		return ob_get_flush();
 	}
 	
-	public function incorporateOnce(array $searchArray, array $replaceArray)
+	public function incorporateOnce(array $searchArray, array $replaceArray): string
 	{
 		ob_start();
 		ob_start(

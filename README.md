@@ -4,7 +4,7 @@ Template is an interface that represents a template to include.
 
 ## Requirements
 
-php >=7.0
+php >=7.4.8
 
 ## Installation
 
